@@ -37,9 +37,13 @@ function App() {
       <section className="currency-selector" >
         <label >
             From : 
-            <select>
+            <select
+            value={toCurrency}
+            onChange={(e)=> setToCurrency(e.target.value)}
+            >
+              
             {
-              ['INR','USD','EUR','GBP','AUD'].map((currency ,index)=>(
+              ['USD','EUR','GBP','INR','AUD'].map((currency ,index)=>(
                 <option key={index} value={currency}> {currency} </option>
               ))
             }
@@ -49,9 +53,12 @@ function App() {
         </label>
         <label >
             To :  
-            <select>
+            <select
+            value={toCurrency}
+            
+            >
             {
-              ['USD','EUR','INR','GBP','AUD'].map((currency ,index)=>(
+              ['INR','USD','EUR','GBP','AUD'].map((currency ,index)=>(
                 <option key={index} value={currency}> {currency} </option>
               ))
             }
